@@ -66,12 +66,12 @@ class PhpConverter extends AbstractConverter
         return $this->traits;
     }
 
-    protected function setTraits($traits)
+    public function setTraits($traits)
     {
         $this->traits = $traits;
     }
 
-    protected function addToTraits($trait)
+    public function addToTraits($trait)
     {
         $this->traits[] = $trait;
     }

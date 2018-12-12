@@ -366,6 +366,10 @@ class ClassGenerator
         $class->setName($type->getName());
         $class->setDocblock($docblock);
 
+        foreach ($class->getTraits() as $trait) {
+            $class->addTrait($trait);
+        }
+
         if ($extends = $type->getExtends()) {
 
             if ($p = $extends->isSimpleType()) {

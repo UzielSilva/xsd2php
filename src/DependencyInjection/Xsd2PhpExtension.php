@@ -41,6 +41,9 @@ class Xsd2PhpExtension extends Extension
                 $converter->addMethodCall('addNamespace', [$xml, self::sanitizePhp($php)]);
             }
             $converter->addMethodCall('setCdata', [$config['cdata'] == 'true']);
+            foreach ($config['traits'] as $trait) {
+                $converter->addMethodCall('addToTraits', [$trait]);
+            }
             foreach ($config['aliases'] as $xml => $data) {
                 foreach ($data as $type => $php) {
                     $converter->addMethodCall('addAliasMapType', [$xml, $type, self::sanitizePhp($php)]);

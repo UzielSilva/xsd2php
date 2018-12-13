@@ -366,7 +366,7 @@ class ClassGenerator
         $class->setName($type->getName());
         $class->setDocblock($docblock);
 
-        foreach ($class->getTraits() as $trait) {
+        foreach ($type->getTraits() as $trait) {
             $class->addTrait($trait);
         }
 

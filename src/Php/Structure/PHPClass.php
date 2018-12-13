@@ -8,6 +8,8 @@ class PHPClass
 
     protected $namespace;
 
+    protected $traits;
+
     protected $doc;
 
     public static function createFromFQCN($className)
@@ -90,6 +92,17 @@ class PHPClass
     public function setNamespace($namespace)
     {
         $this->namespace = $namespace;
+        return $this;
+    }
+
+    public function getTraits()
+    {
+        return $this->traits;
+    }
+
+    public function setTraits($traits)
+    {
+        $this->traits = $traits;
         return $this;
     }
 

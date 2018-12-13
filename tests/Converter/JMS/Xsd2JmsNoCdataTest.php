@@ -13,6 +13,7 @@ class Xsd2PhpElementNoCdataTest extends Xsd2JmsBase
         $this->converter = new YamlConverter(new ShortNamingStrategy());
         $this->converter->addNamespace('http://www.example.com', "Example");
         $this->converter->setCdata(false);
+        $this->converter->setExclusionPolicy('all');
 
         $this->reader = new SchemaReader();
     }
@@ -37,6 +38,7 @@ class Xsd2PhpElementNoCdataTest extends Xsd2JmsBase
                 'Example\ElementOne' => array(
                     'xml_root_name' => 'ns-8ece61d2:element-one',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'all',
                     'properties' => array(
                         '__value' => array(
                             'expose' => true,
@@ -80,6 +82,7 @@ class Xsd2PhpElementNoCdataTest extends Xsd2JmsBase
                 'Example\\ElementOne' => array(
                     'xml_root_name' => 'ns-8ece61d2:element-one',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'all',
                     'properties' => array(
                         '__value' => array(
                             'expose' => true,
@@ -118,6 +121,7 @@ class Xsd2PhpElementNoCdataTest extends Xsd2JmsBase
             'Example\\ElementOne' => array(
                 'xml_root_name' => 'ns-8ece61d2:element-one',
                 'xml_root_namespace' => 'http://www.example.com',
+                'exclusion_policy' => 'all',
                 'properties' => array(
                     '__value' => array(
                         'expose' => true,
@@ -158,6 +162,7 @@ class Xsd2PhpElementNoCdataTest extends Xsd2JmsBase
             'Example\\ElementOne' => array(
                 'xml_root_name' => 'ns-8ece61d2:element-one',
                 'xml_root_namespace' => 'http://www.example.com',
+                'exclusion_policy' => 'all',
                 'properties' => array(
                     '__value' => array(
                         'expose' => true,
@@ -335,6 +340,7 @@ class Xsd2PhpElementNoCdataTest extends Xsd2JmsBase
                 'Example\\Element1' => array(
                     'xml_root_name' => 'ns-8ece61d2:element-1',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'all',
                     'properties' => array(
                         '__value' => array(
                             'expose' => true,

@@ -46,6 +46,9 @@ class Xsd2PhpExtension extends Extension
                     $converter->addMethodCall('addToTraits', [$trait]);
                 }
             }
+            if ($type === 'yml') {
+                $converter->addMethodCall('setExclusionPolicy', [$config['exclusion_policy']]);
+            }
             foreach ($config['aliases'] as $xml => $data) {
                 foreach ($data as $type => $php) {
                     $converter->addMethodCall('addAliasMapType', [$xml, $type, self::sanitizePhp($php)]);

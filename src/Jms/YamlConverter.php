@@ -23,6 +23,17 @@ use GoetasWebservices\Xsd\XsdToPhp\Php\Structure\PHPClass;
 
 class YamlConverter extends AbstractConverter
 {
+    private $exclusionPolicy = 'none';
+
+    public function setExclusionPolicy($exclusionPolicy)
+    {
+        $this->exclusionPolicy = $exclusionPolicy;
+    }
+
+    protected function getExclusionPolicy()
+    {
+        return $this->exclusionPolicy;
+    }
 
     public function __construct(NamingStrategy $namingStrategy)
     {
@@ -151,6 +162,7 @@ class YamlConverter extends AbstractConverter
                     $data["xml_root_name"] = "ns-" . substr(sha1($data["xml_root_namespace"]), 0, 8) . ":" . $data["xml_root_name"];
                 }
             }
+            $data["exclusion_policy"] = $this->getExclusionPolicy();
             $this->classes[spl_object_hash($element)]["class"] = &$class;
 
             if (!$element->getType()->getName()) {

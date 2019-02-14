@@ -59,6 +59,23 @@ class PhpConverter extends AbstractConverter
         return $this->getTypes();
     }
 
+    private $traits = [];
+
+    protected function getTraits()
+    {
+        return $this->traits;
+    }
+
+    public function setTraits($traits)
+    {
+        $this->traits = $traits;
+    }
+
+    public function addToTraits($trait)
+    {
+        $this->traits[] = $trait;
+    }
+
     /**
      *
      * @return PHPClass[]
@@ -159,6 +176,7 @@ class PhpConverter extends AbstractConverter
                 throw new Exception(sprintf("Can't find a PHP namespace to '%s' namespace", $schema->getTargetNamespace()));
             }
             $class->setNamespace($this->namespaces[$schema->getTargetNamespace()]);
+            $class->setTraits($this->getTraits());
 
             $this->classes[spl_object_hash($element)]["class"] = $class;
             $this->classes[spl_object_hash($element)]["skip"] = $skip;
@@ -244,6 +262,7 @@ class PhpConverter extends AbstractConverter
             list ($name, $ns) = $this->findPHPName($type);
             $class->setName($name);
             $class->setNamespace($ns);
+            $class->setTraits($this->getTraits());
 
             $class->setDoc($type->getDoc() . PHP_EOL . "XSD Type: " . ($type->getName() ?: 'anonymous'));
 
@@ -282,6 +301,7 @@ class PhpConverter extends AbstractConverter
             $class->setName($this->getNamingStrategy()->getAnonymousTypeName($type, $name));
 
             $class->setNamespace($parentClass->getNamespace() . "\\" . $parentClass->getName());
+            $class->setTraits($this->getTraits());
             $class->setDoc($type->getDoc());
 
             $this->visitTypeBase($class, $type);

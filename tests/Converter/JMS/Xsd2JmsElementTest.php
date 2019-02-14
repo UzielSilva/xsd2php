@@ -24,6 +24,7 @@ class Xsd2PhpElementTest extends Xsd2JmsBase
                 'Example\ElementOne' => array(
                     'xml_root_name' => 'ns-8ece61d2:element-one',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'none',
                     'properties' => array(
                         '__value' => array(
                             'expose' => true,
@@ -64,6 +65,7 @@ class Xsd2PhpElementTest extends Xsd2JmsBase
                 'Example\\ElementOne' => array(
                     'xml_root_name' => 'ns-8ece61d2:element-one',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'none',
                     'properties' => array(
                         '__value' => array(
                             'expose' => true,
@@ -99,6 +101,7 @@ class Xsd2PhpElementTest extends Xsd2JmsBase
             'Example\\ElementOne' => array(
                 'xml_root_name' => 'ns-8ece61d2:element-one',
                 'xml_root_namespace' => 'http://www.example.com',
+                'exclusion_policy' => 'none',
                 'properties' => array(
                     '__value' => array(
                         'expose' => true,
@@ -136,6 +139,7 @@ class Xsd2PhpElementTest extends Xsd2JmsBase
             'Example\\ElementOne' => array(
                 'xml_root_name' => 'ns-8ece61d2:element-one',
                 'xml_root_namespace' => 'http://www.example.com',
+                'exclusion_policy' => 'none',
                 'properties' => array(
                     '__value' => array(
                         'expose' => true,
@@ -186,6 +190,7 @@ class Xsd2PhpElementTest extends Xsd2JmsBase
                 'Example\\Root' => array(
                     'xml_root_name' => 'ns-8ece61d2:root',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'none',
                     'properties' => array(
                         'child' => array(
                             'expose' => true,
@@ -270,6 +275,7 @@ class Xsd2PhpElementTest extends Xsd2JmsBase
                 'Example\\Root' => array(
                     'xml_root_name' => 'ns-8ece61d2:root',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'none',
                     'properties' => array(
                         'child' => array(
                             'expose' => true,

@@ -612,6 +612,7 @@ class Xsd2PhpGroupTest extends Xsd2JmsBase
                 'Example\\Element1' => array(
                     'xml_root_name' => 'ns-8ece61d2:element-1',
                     'xml_root_namespace' => 'http://www.example.com',
+                    'exclusion_policy' => 'all',
                     'properties' => array(
                         '__value' => array(
                             'expose' => true,
